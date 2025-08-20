@@ -7,73 +7,40 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <main class="card">
+  <main>
     <h1>Leave Request</h1>
 
-    <form id="leave-form" novalidate>
-      <!-- Section: Employee -->
-      <div class="section">
-        <h2>Employee Information</h2>
-        <label>Full Name <span>*</span>
-          <input type="text" id="name" name="name" required>
-        </label>
-        <label>Employee ID
-          <input type="text" id="empId" name="empId" />
-        </label>
-        <label>Department
-          <input type="text" id="dept" name="dept" />
-        </label>
-      </div>
+    <form action="https://docs.google.com/forms/d/e/1FAIpQLSdeNQMXmr3bClW3hdHD2Q8Q6JNEABLIk_eEBVv08OYJdR30sg/formResponse" 
+          method="POST" target="hidden_iframe" onsubmit="submitted=true;">
+      
+      <label>Name
+        <input type="text" name="entry.2005620554" required>
+      </label>
 
-      <!-- Section: Leave details -->
-      <div class="section">
-        <h2>Leave Details</h2>
-        <label>Leave Type <span>*</span>
-          <select id="type" name="type" required>
-            <option value="" selected disabled>Select…</option>
-            <option>Annual Leave</option>
-            <option>Sick Leave</option>
-            <option>Casual Leave</option>
-            <option>Unpaid Leave</option>
-            <option>Other</option>
-          </select>
-        </label>
+      <label>From
+        <input type="date" name="entry.1045781291" required>
+      </label>
 
-        <div class="grid">
-          <label>From <span>*</span>
-            <input type="date" id="from" name="from" required>
-          </label>
-          <label>To <span>*</span>
-            <input type="date" id="to" name="to" required>
-          </label>
-        </div>
+      <label>To
+        <input type="date" name="entry.1065046570" required>
+      </label>
 
-        <label>Total Days
-          <input type="number" id="days" name="days" readonly>
-        </label>
+      <label>Reason
+        <textarea name="entry.1166974658" required></textarea>
+      </label>
 
-        <label>Reason <span>*</span>
-          <textarea id="reason" name="reason" rows="3" required></textarea>
-        </label>
-
-        <label>Contact During Leave
-          <input type="tel" id="contact" name="contact" placeholder="+95 …">
-        </label>
-
-        <label>Approver Email <span>*</span>
-          <input type="email" id="approver" name="approver" required placeholder="manager@company.com">
-        </label>
-
-        <label>Attachment (optional)
-          <input type="file" id="file" name="file" accept=".pdf,.jpg,.png,.jpeg">
-        </label>
-      </div>
-
-      <button type="submit" class="btn">Submit</button>
-      <p id="status" class="status"></p>
+      <button type="submit">Submit</button>
     </form>
+
+    <iframe name="hidden_iframe" style="display:none;"></iframe>
+    <p id="status"></p>
   </main>
 
-  <script src="script.js"></script>
+  <script>
+    let submitted = false;
+    document.querySelector("form").addEventListener("submit", () => {
+      document.getElementById("status").textContent = "Submitted ✔";
+    });
+  </script>
 </body>
 </html>
