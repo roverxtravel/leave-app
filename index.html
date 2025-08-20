@@ -7,33 +7,35 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <main>
+  <main class="card">
     <h1>Leave Request</h1>
 
     <form action="https://docs.google.com/forms/d/e/1FAIpQLSdeNQMXmr3bClW3hdHD2Q8Q6JNEABLIk_eEBVv08OYJdR30sg/formResponse" 
           method="POST" target="hidden_iframe" onsubmit="submitted=true;">
       
-      <label>Name
+      <label>Full Name <span>*</span>
         <input type="text" name="entry.2005620554" required>
       </label>
 
-      <label>From
-        <input type="date" name="entry.1045781291" required>
+      <div class="grid">
+        <label>From <span>*</span>
+          <input type="date" name="entry.1045781291" required>
+        </label>
+
+        <label>To <span>*</span>
+          <input type="date" name="entry.1065046570" required>
+        </label>
+      </div>
+
+      <label>Reason <span>*</span>
+        <textarea name="entry.1166974658" rows="3" required></textarea>
       </label>
 
-      <label>To
-        <input type="date" name="entry.1065046570" required>
-      </label>
-
-      <label>Reason
-        <textarea name="entry.1166974658" required></textarea>
-      </label>
-
-      <button type="submit">Submit</button>
+      <button type="submit" class="btn">Submit</button>
     </form>
 
     <iframe name="hidden_iframe" style="display:none;"></iframe>
-    <p id="status"></p>
+    <p id="status" class="status"></p>
   </main>
 
   <script>
