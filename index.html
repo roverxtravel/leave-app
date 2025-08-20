@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Leave App</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main>
+    <h1>Leave Request</h1>
+    <form id="leave-form">
+      <label>Name
+        <input type="text" id="name" required>
+      </label>
+      <label>From
+        <input type="date" id="from" required>
+      </label>
+      <label>To
+        <input type="date" id="to" required>
+      </label>
+      <label>Reason
+        <textarea id="reason" required></textarea>
+      </label>
+      <button type="submit">Submit</button>
+    </form>
+    <p id="status"></p>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
